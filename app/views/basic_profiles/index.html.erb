@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<head>
+<h1>list</h1>
+</head>
+<% @basic_profile.each do |basic_profile| %>
+<body>
+<p><a href="/basic_profiles/<%= basic_profile.id %>"><%= basic_profile.first_name %></a></p>
+<% end %>
+<%= yield %>
+</body>
+<%= link_to 'new' ,"/basic_profiles/new" %>

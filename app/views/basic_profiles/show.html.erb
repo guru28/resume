@@ -1,0 +1,36 @@
+<p><%= @basic_profile.first_name %></p>
+<p><%= @basic_profile.last_name %></p>
+<p><%= @basic_profile.age %></p>
+<p><%= @basic_profile.sex %></p>
+<p><%= @basic_profile.father_name %></p>
+<p><%= @basic_profile.mother_name %></p>
+<h>education</h>
+<% @basic_profile.educations.each do |edu| %>
+   <ul>
+   <li><%= edu.qualification %></li>
+   <li><%= edu.institution %></li>
+   <li><%= edu.start_year %></li>
+   <li><%= edu.end_year %></li>
+   <li><%= edu.percentage %></li>
+   </ul>
+   <% end %>
+<h>works</h>
+<% @basic_profile.works.each do |works| %>
+  <ul>
+  <li><%= works.company %></li>
+  <li><%= works.postion %></li>
+  <li><%= works.from_year %></li>
+  <li><%= works.to_year %></li>
+  </ul>
+  <% end %>
+<h>contact</h>
+<% @basic_profile.contacts.each do |contact| %>
+  <ul>
+  <li><%= contact.person %></li>
+  <li><%= contact.street_name %></li>
+  <li><%= contact.city_name %></li>
+  <li><%= contact.country %></li>
+  <li><%= contact.pin %></li>
+  <li><%= contact.phone %></li>
+  </ul>
+  <% end %>

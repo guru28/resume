@@ -1,0 +1,42 @@
+<%= form_for @basic_profile do |f| %>
+  <% if @basic_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@basic_profile.errors.count, "error") %> prohibited
+        this label from being saved:
+      </h2>
+      <ul>
+        <% @basic_profile.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :age %><br/>
+    <%= f.text_field :age %>
+  </p>
+  <p>
+    <%= f.label :sex %><br/>
+    <%= f.select_field :sex, "<option>male</option><option>female</option><option>other</option>" %>
+  </p>
+  <p>
+    <%= f.label :father_name %><br/>
+    <%= f.text_field :father_name %>
+  </p>
+  <p>
+    <%= f.label :mother_name %><br/>
+    <%= f.text_field :mother_name %>
+  </p>
+
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+
